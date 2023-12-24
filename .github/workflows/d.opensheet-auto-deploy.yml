@@ -1,0 +1,28 @@
+name: Open Sheet Develop Auto Deploy
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+
+jobs:
+  run-ssh-command:
+    environment: dopensheet
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install new npm and composer packages and migrate:fresh --seed
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASS }}
+          script: |
+            echo "Auto Deploy"
+            cd htdocs/d.opensheet.net/
+            git reset --hard
+            git pull
+            npm install
+            composer install
+            php artisan migrate:fresh --seed
+            npm run build
