@@ -37,9 +37,8 @@ class Timeland extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        
-    ];
 
+    ];
 
     /**
      * Get the user that owns the timeland.
@@ -56,7 +55,6 @@ class Timeland extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
 
     /**
      * Get the sheets for the timeland.

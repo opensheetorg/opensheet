@@ -18,7 +18,7 @@ class Profile extends Model
         'gender',
         'location',
         'about',
-        'website'
+        'website',
     ];
 
     /**
@@ -36,9 +36,8 @@ class Profile extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        
-    ];
 
+    ];
 
     /**
      * Get the user that owns the profile.
@@ -47,5 +46,4 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
-
 }
