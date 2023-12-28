@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('auth')->group(function() {
+    Route::middleware('profile.filled')->group(function() {
+        // All the routes that requires authentication should be implemented here...
+    });
+});

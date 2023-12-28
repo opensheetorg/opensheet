@@ -16,6 +16,7 @@ class Profile extends Model
      */
     protected $fillable = [
         'gender',
+        'birthdate',
         'location',
         'about',
         'website'

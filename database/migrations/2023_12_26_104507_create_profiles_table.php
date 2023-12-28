@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('gender');
+            $table->date('birthdate');
             $table->string('location');
-            $table->string('about');
-            $table->string('website');
+            $table->string('about')->nullable();
+            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
