@@ -2,11 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Profile;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Profile;
 
 class EnsureProfileDataFilled
 {
@@ -20,11 +19,10 @@ class EnsureProfileDataFilled
 
         $profile = Profile::where('user_id', $request->user()->id)->count();
 
-        if( $profile )
-        {
+        if ($profile) {
             return $next($request);
         }
-        
-        return redirect("/auth/fill-profile");
+
+        return redirect('/auth/fill-profile');
     }
 }

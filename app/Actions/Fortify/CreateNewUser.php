@@ -35,7 +35,7 @@ class CreateNewUser implements CreatesNewUsers
                 'string',
                 'regex:/^[a-z0-9_\d]+$/',
                 'max:64',
-                Rule::unique(User::class)
+                Rule::unique(User::class),
             ],
 
         ])->validate();

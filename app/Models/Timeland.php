@@ -12,7 +12,7 @@ use Overtrue\LaravelLike\Traits\Likeable;
 
 class Timeland extends Model
 {
-    use HasFactory, SoftDeletes, Followable, Likeable;
+    use Followable, HasFactory, Likeable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

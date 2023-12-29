@@ -10,7 +10,7 @@ use Overtrue\LaravelLike\Traits\Likeable;
 
 class Sheet extends Model
 {
-    use HasFactory, SoftDeletes, Likeable;
+    use HasFactory, Likeable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

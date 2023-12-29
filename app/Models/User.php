@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Overtrue\LaravelFollow\Traits\Follower;
+use Laravel\Sanctum\HasApiTokens;
 use Overtrue\LaravelFollow\Traits\Followable;
+use Overtrue\LaravelFollow\Traits\Follower;
 use Overtrue\LaravelLike\Traits\Liker;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, HasFactory, Notifiable, TwoFactorAuthenticatable, Follower, Followable, Liker;
+    use Followable, Follower, HasApiTokens, HasFactory, Liker, Notifiable, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.

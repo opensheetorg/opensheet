@@ -17,8 +17,8 @@ Route::get('/', function () {
     return inertia('Home');
 });
 
-Route::middleware('auth')->group(function() {
-    Route::middleware('profile.filled')->group(function() {
+Route::middleware('auth')->group(function () {
+    Route::middleware('profile.filled')->group(function () {
         // All the routes that requires authentication should be implemented here...
     });
 });
