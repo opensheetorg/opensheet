@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.8",
         "overtrue/laravel-follow": "^5.1",
         "overtrue/laravel-like": "*",
-        "spatie/laravel-medialibrary": "^11.0.0"
+        "spatie/laravel-medialibrary": "^11.0.0",
+        "tightenco/ziggy": "^1.8"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
