@@ -57,7 +57,7 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::twoFactorChallengeView(function () {
-            return Inertia::render('Auth/TwoFactorChallange');
+            return Inertia::render('Auth/TwoFactorChallenge');
         });
 
         Fortify::resetPasswordView(function (Request $request) {

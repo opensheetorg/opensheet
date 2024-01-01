@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('timeland_id')->nullable()->constrained();
             $table->string('title');
-            $table->text('slug')->unique();
+            $table->string('slug')->unique();
             $table->text('content');
             $table->timestamps();
             $table->softDeletes();
