@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/mapp/auth', [AuthController::class, 'issueMobileSession'])->middleware('throttle:6,1');
 
-Route::middlware('auth:sanctum')->group(function () {
+Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/user', function (Request $request) {
-        return $request->user();
+        return $request->user()->with('profile')->first();
     });
 
     Route::delete('/mapp', [AuthController::class, 'revokeAllMobileSessions']);
